@@ -10,7 +10,8 @@ Die Beiträge können optional mit einem Start- und/oder Enddatum versehen werde
 Veröffentlichte Beiträge erscheinen zusätzlich in einem Newsarchiv.
 
 Newsbeiträge sind multilingual.
-Seit Version 3.1.2 muss jeder Newsbeitrag in allen im Shop aktiven Sprachen einen Title und einen Inhalt haben, sonst wird er generell nicht angezeigt
+Seit Version 3.1.2 muss jeder Newsbeitrag in allen im Shop aktiven Sprachen einen Title und einen Inhalt haben, sonst wird er generell nicht angezeigt.
+
 Seit Version 3.1.2 kann mit Newstypen/Newskategorien gearbeitet werden, aus denen sich dann die Beiträge speisen, z.B.
 * Typ1 = Termine
 * Typ2 = Neuerscheinungen

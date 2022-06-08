@@ -6,14 +6,14 @@ Anpassung des Moduls von lat9 (https://github.com/lat9/news_box_manager_v3) für
 
 SINN UND ZWECK:
 
-Mit dieser Erweiterung können via Shopadministration Newsbeiträge verfasst werden, die dann im Shop entweder auf der Startseite und/oder in zwei unterschiedlichen Sidebox angezeigt werden.
+Mit dieser Erweiterung können via Shopadministration Newsbeiträge verfasst werden, die dann im Shop entweder auf der Startseite und/oder in zwei unterschiedlichen Sideboxen angezeigt werden.
 Die Beiträge können optional mit einem Start- und/oder Enddatum versehen werden.
 Veröffentlichte Beiträge erscheinen zusätzlich in einem Newsarchiv.
 Newsbeiträge sind multilingual und für jeden Beitrag können eigene Metatags hinterlegt werden
 Seit Version 3.1.2 muss jeder Newsbeitrag in allen im Shop aktiven Sprachen einen Title und einen Inhalt haben, sonst wird er generell nicht angezeigt
 Seit Version 3.1.2 kann mit Newstypen/Newskategorien gearbeitet werden, aus denen sich dann die Beiträge speisen, z.B.
 Typ1 = Termine, Typ2 = Neuerscheinungen, Typ 3 = Veranstaltungen, Typ 4 = Aktionen
-In den Admin Profilen können unterschiedliche Admins für das Erstellen nur bestimmter Newskategoriebeiträge hinterlegt werden
+In den Admin Profilen können unterschiedliche Admins für das Erstellen nur bestimmter Newskategoriebeiträge berechtigt werden
 Seit Version 3.1.2 wird für die Newsbeiträge automatisch auch - falls installiert - das Modul Sitemap XML unterstützt, das die Beiträge dann in die Sitemap aufnimmt.
 Newsbeiträge aus älteren Versionen dieses Moduls bleiben bei der Installation erhalten und werden automatisch ins neue Format konvertiert.
 Ältere Versionen dieses Moduls haben die Einzelbeiträge auf der Seite more_news und das Newsarchiv auf der Seite news_archive angezeigt.
@@ -53,7 +53,7 @@ if (file_exists($mnbf)) {
 
 3)
 In die Zen Cart Administration einloggen und auf irgendeinen Menüpunkt clicken.
-Unter Konfiguration ist nun der neue Menüpunkt News Box Manager vorhanden. Hier wie gewünscht einstellen.
+Unter Konfiguration ist nun der neue Menüpunkt News Box Manager vorhanden. Hier alles wie gewünscht und dort beschrieben einstellen.
 Das Verfassen der Newsbeiträge erfolgt dann mit dem neuen Menüpunkt Tools > News Box Manager
 Die beiden Sideboxen können unter Tools > Boxlayout aktiviert werden.
 
@@ -61,7 +61,11 @@ Die beiden Sideboxen können unter Tools > Boxlayout aktiviert werden.
 Die Themenbezeichnungen für die 4 Artikeltypen können Sie anpassen in:
 includes/languages/german/extra_definitions/news_box_manager_defines.php
 
-Ausführliche Informationen zu diesem Modul auch in der englischen Originaldiko im Ordner ENGLISCHE DOKU
+5)
+Unter Administratoren > Admin Profile können unterschiedliche Admins für das Erstellen nur bestimmter Newskategoriebeiträge berechtigt werden.
+So könnten Sie z.B. "Redakteure" haben, die nur Aktuellbeiträge zu Terminen, Sonderangeboten oder was auch immer beisteuern.
+
+Weitere Informationen zu diesem Modul auch in der englischen Originaldoko im Ordner ENGLISCHE DOKU
 
 
 
