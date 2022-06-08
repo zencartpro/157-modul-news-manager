@@ -1,0 +1,3 @@
+Falls Sie das Modul Sitemap XML installiert haben, laden Sie nun noch die Datei includes/modules/pages/sitemapxml/sitemapxml_boxnews3.php aus diesem Ordner ins Shopverzeichnis hoch.
+Falls Sie dort noch eine alte sitemapxml_boxnews.php haben, können Sie diese nun löschen.
+Nun können Sie unter Tools > Sitemap XML unter Sitemap Plugins das Plugin sitemapxml_boxnews3.php ankreuzen und speichern, um ab sofort auch die Newsbeiträge in der neuen Struktur in Ihre XML Sitemap zu übernehmen.

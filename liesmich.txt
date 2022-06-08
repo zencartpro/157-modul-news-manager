@@ -6,7 +6,7 @@ Anpassung des Moduls von lat9 (https://github.com/lat9/news_box_manager_v3) für
 
 SINN UND ZWECK:
 
-Mit dieser Erweiterung können via Shopadministration Newsbeiträge verfasst werden, die dann im Shop entweder auf der Startseite und/oder in zwei unterschiedlichen Sideboxen angezeigt werden.
+Mit dieser Erweiterung können via Shopadministration Newsbeiträge verfasst werden, die dann im Shop auf der Startseite und/oder in zwei unterschiedlichen Sideboxen angezeigt werden.
 Die Beiträge können optional mit einem Start- und/oder Enddatum versehen werden.
 Veröffentlichte Beiträge erscheinen zusätzlich in einem Newsarchiv.
 Newsbeiträge sind multilingual und für jeden Beitrag können eigene Metatags hinterlegt werden
@@ -64,6 +64,11 @@ includes/languages/german/extra_definitions/news_box_manager_defines.php
 5)
 Unter Administratoren > Admin Profile können unterschiedliche Admins für das Erstellen nur bestimmter Newskategoriebeiträge berechtigt werden.
 So könnten Sie z.B. "Redakteure" haben, die nur Aktuellbeiträge zu Terminen, Sonderangeboten oder was auch immer beisteuern.
+6)
+OPTIONAL
+Falls Sie das Modul Sitemap XML installiert haben, laden Sie nun noch die Datei includes/modules/pages/sitemapxml/sitemapxml_boxnews3.php aus dem Ordner OPTIONAL SITEMAP XML ins Shopverzeichnis hoch.
+Falls Sie dort noch eine alte sitemapxml_boxnews.php haben, können Sie diese nun löschen.
+Nun können Sie unter Tools > Sitemap XML unter Sitemap Plugins das Plugin sitemapxml_boxnews3.php ankreuzen und speichern, um ab sofort auch die Newsbeiträge in der neuen Struktur in Ihre XML Sitemap zu übernehmen.
 
 Weitere Informationen zu diesem Modul auch in der englischen Originaldoko im Ordner ENGLISCHE DOKU
 
