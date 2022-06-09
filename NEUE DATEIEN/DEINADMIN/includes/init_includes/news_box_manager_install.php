@@ -8,7 +8,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: news_box_manager_install.php 2022-06-07 08:01:16Z webchills $
+ * @version $Id: news_box_manager_install.php 2022-06-09 14:25:16Z webchills $
  */
  
 if (!defined('IS_ADMIN_FLAG') || IS_ADMIN_FLAG !== true) {
@@ -46,7 +46,7 @@ $db->Execute(
         ('News Archive: News Content Length', 'NEWS_BOX_CONTENT_LENGTH_ARCHIVE', '0', 'Set the maximum number of characters (an integer value) of each article\'s content to display within the &quot;News Archive&quot; page.  Set the value to <em>0</em> to disable the content display or to <em>-1</em> to display each article\'s entire content (no HTML will be stripped).', $cgi, 48, now(), NULL, NULL)"
 );
 $db->Execute("REPLACE INTO ".TABLE_CONFIGURATION_LANGUAGE." (configuration_title, configuration_key, configuration_description, configuration_language_id) VALUES
-('News Box Manager Version', 'NEWS_BOX_MODULE_VERSION', 'Version des Moduls / Installationsdatum', 43),
+('News Box Manager Version', 'NEWS_BOX_MODULE_VERSION', 'Version des Moduls / Releasedatum', 43),
 ('Anzahl der Newsbeiträge in der Sidebox', 'NEWS_BOX_SHOW_NEWS', 'Wieviele Beiträge sollen maximal in der Sidebox angezeigt werden?', 43),
 ('Anzahl der Newsbeiträge auf der Startseite', 'NEWS_BOX_SHOW_CENTERBOX','Wieviele Beiträge sollen maximal auf der Startseite angezeigt werden?', 43),
 ('Anzahl der Newsbeiträge im Newsarchiv', 'NEWS_BOX_SHOW_ARCHIVE', 'Wieviele Beiträge sollen maximal im Newsarchiv angezeigt werden?', 43),

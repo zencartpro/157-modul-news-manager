@@ -8,7 +8,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: init_news_box_manager_admin.php 2022-06-08 18:46:16Z webchills $
+ * @version $Id: init_news_box_manager_admin.php 2022-06-09 08:49:16Z webchills $
  */
  
 if (!defined('IS_ADMIN_FLAG')) {
@@ -23,7 +23,7 @@ if (empty($_SESSION['admin_id'])) {
 }
 
 define('NEWS_BOX_CURRENT_VERSION', '3.1.2');
-define('NEWS_BOX_CURRENT_UPDATE_DATE', '2022-06-08');
+define('NEWS_BOX_CURRENT_UPDATE_DATE', '2022-06-09');
 define('NEWS_BOX_CURRENT_VERSION_DATE', NEWS_BOX_CURRENT_VERSION . ' (' . NEWS_BOX_CURRENT_UPDATE_DATE . ')');
 
 // -----

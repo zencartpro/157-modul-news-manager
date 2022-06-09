@@ -8,7 +8,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: news_box_manager_menu_name.php 2022-06-07 08:00:16Z webchills $
+ * @version $Id: news_box_manager_menu_name.php 2022-06-09 14:16:16Z webchills $
  */
 
 // -----
@@ -50,4 +50,4 @@ define('NEWS_BOX_UPDATED', '<em>News Box Manager</em> wurde erfolgreich aktualis
 // Used by the plugin's update script when one or more articles are disabled due to missing content.  The %s is filled in with the name
 // of the file that contains details about the articles that were disabled.
 //
-define('NEWS_BOX_ARTICLES_DISABLED', 'One or more of your existing news articles have been disabled, due to missing content. See this (%s) file for details.');
+define('NEWS_BOX_ARTICLES_DISABLED', 'Einer oder mehrere Ihrer vorhandenen Nachrichtenartikel wurden aufgrund fehlender Inhalte deaktiviert. Details dazu in folgender Datei (%s)');
