@@ -21,3 +21,5 @@ Seit Version 3.1.2 kann mit Newstypen/Newskategorien gearbeitet werden, aus dene
 In den Admin Profilen können unterschiedliche Admins für das Erstellen nur bestimmter Newskategoriebeiträge hinterlegt werden.
 
 Seit Version 3.1.2 wird für die Newsbeiträge automatisch auch - falls installiert - das Modul Sitemap XML unterstützt, das die Beiträge dann in die Sitemap aufnimmt.
+
+Übersetzung/Anpassung des Moduls News Box Manager v3 von lat9 (https://github.com/lat9/news_box_manager_v3) für die deutsche Zen cart Version
