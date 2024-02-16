@@ -1,39 +1,39 @@
 <?php
 /**
- * Part of the News Box Manager plugin, re-structured for Zen Cart v1.5.6 and later by lat9.
- * Copyright (C) 2015-2022, Vinos de Frutas Tropicales
+ * Part of the News Box Manager plugin, re-structured for Zen Cart v1.5.8 and later by lat9.
+ * Copyright (C) 2015-2024, Vinos de Frutas Tropicales
  * Do Not Remove: Coded for Zen-Cart by geeks4u.com
  * Dedicated to Memory of Amelita "Emmy" Abordo Gelarderes
- * @copyright Copyright 2003-2022 Zen Cart Development Team
+ * @copyright Copyright 2003-2024 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: NewsBoxManagerAdminObserver.php 2022-06-07 07:35:16Z webchills $
+ * @version $Id: NewsBoxManagerAdminObserver.php 2024-02-16 08:35:16Z webchills $
  */
   
 if (!defined('IS_ADMIN_FLAG') || IS_ADMIN_FLAG !== true) {
     die('Illegal Access');
 }
 
-class NewsBoxManagerAdminObserver extends base 
+class NewsBoxManagerAdminObserver extends base
 {
     public function __construct() {
         if (!defined('NEWS_BOX_MODULE_VERSION')) {
             return;
         }
         $this->attach (
-            $this, 
-            array( 
+            $this,
+            [
                 /* Issued by /admin/languages.php */
                 'NOTIFY_ADMIN_LANGUAGE_INSERT', 
                 'NOTIFY_ADMIN_LANGUAGE_DELETE',
-            ) 
+            ]
         );
     }
-  
+
     public function update(&$class, $eventID, $p1, &$p2, &$p3) {
         global $db;
-        
+
         switch ($eventID) {
             // -----
             // If a language is added, copy any news title/content/metatags to the new language from the
@@ -82,7 +82,7 @@ class NewsBoxManagerAdminObserver extends base
                       WHERE languages_id = $language_to_remove"
                 );
                 break;
-            
+
             // -----
             // Anything else ...
             //

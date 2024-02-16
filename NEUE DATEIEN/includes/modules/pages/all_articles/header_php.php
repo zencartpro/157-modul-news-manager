@@ -1,14 +1,14 @@
 <?php
 /**
- * Part of the News Box Manager plugin, re-structured for Zen Cart v1.5.6 and later by lat9.
- * Copyright (C) 2015-2022, Vinos de Frutas Tropicales
+ * Part of the News Box Manager plugin, re-structured for Zen Cart v1.5.8 and later by lat9.
+ * Copyright (C) 2015-2024, Vinos de Frutas Tropicales
  * Do Not Remove: Coded for Zen-Cart by geeks4u.com
  * Dedicated to Memory of Amelita "Emmy" Abordo Gelarderes
- * @copyright Copyright 2003-2022 Zen Cart Development Team
+ * @copyright Copyright 2003-2024 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: header_php.php 2022-06-07 07:35:16Z webchills $
+ * @version $Id: header_php.php 2024-02-16 08:35:16Z webchills $
  */
  
 $zco_notifier->notify('NOTIFY_ALL_ARTICLES_HEADER_START');
@@ -19,7 +19,7 @@ require DIR_WS_MODULES . zen_get_module_directory('require_languages.php');
 //
 $news_type_name = '';
 $news_and_clause = '';
-$news_type = (isset($_GET['t'])) ? $_GET['t'] : '';
+$news_type = $_GET['t'] ?? '';
 switch ($news_type) {
     case '1':
     case '2':
@@ -33,6 +33,32 @@ switch ($news_type) {
     default:
         $canonicalLink = zen_href_link(FILENAME_ALL_ARTICLES);
         break;
+}
+
+$nb_sort_order = (int)($_GET['sort'] ?? 0);
+switch ($nb_sort_order) {
+    case 2:
+        $nb_order_by = 'n.news_start_date ASC, n.box_news_id ASC';
+        break;
+    case 3:
+        $nb_order_by = 'nc.news_title ASC, n.box_news_id ASC';
+        break;
+    case 4:
+        $nb_order_by = 'nc.news_title DESC, n.box_news_id DESC';
+        break;
+    default:
+        $nb_order_by = 'n.news_start_date DESC, n.box_news_id DESC';
+        if ($nb_sort_order !== 1) {
+            $nb_sort_order = 1;
+            unset($_GET['sort']);
+        }
+        break;
+}
+
+if (empty($_GET['nb_keyword'])) {
+    unset($_GET['nb_keyword']);
+} else {
+    $news_and_clause = zen_build_keyword_where_clause(['nc.news_title', 'nc.news_content'], $_GET['nb_keyword']);
 }
 
 $breadcrumb->add(sprintf(NAVBAR_TITLE, $news_type_name));
