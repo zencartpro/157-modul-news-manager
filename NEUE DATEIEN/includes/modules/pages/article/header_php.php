@@ -1,14 +1,14 @@
 <?php
 /**
  * Part of the News Box Manager plugin, re-structured for Zen Cart v1.5.8 and later by lat9.
- * Copyright (C) 2015-2024, Vinos de Frutas Tropicales
+ * Copyright (C) 2015-2026, Vinos de Frutas Tropicales
  * Do Not Remove: Coded for Zen-Cart by geeks4u.com
  * Dedicated to Memory of Amelita "Emmy" Abordo Gelarderes
- * @copyright Copyright 2003-2024 Zen Cart Development Team
+ * @copyright Copyright 2003-2026 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: header_php.php 2024-02-16 08:35:16Z webchills $
+ * @version $Id: header_php.php 2026-05-20 08:35:16Z webchills $
  */
  
 $zco_notifier->notify('NOTIFY_HEADER_ARTICLE_START');
@@ -16,7 +16,7 @@ $zco_notifier->notify('NOTIFY_HEADER_ARTICLE_START');
 $_SESSION['navigation']->remove_current_page();
 
 require DIR_WS_MODULES . zen_get_module_directory('require_languages.php');
-$breadcrumb->add(NAVBAR_TITLE);
+
 
 $news_id = (int)($_GET['p'] ?? 0);
 $languages_id = (int)$_SESSION['languages_id'];
@@ -63,4 +63,6 @@ if (!empty($end_date)) {
 
 $canonicalLink = zen_href_link(FILENAME_ARTICLE, "p=$news_id");
 
+$breadcrumb->add(NAVBAR_TITLE, zen_href_link(FILENAME_ALL_ARTICLES));
+$breadcrumb->add($news_title);
 $zco_notifier->notify('NOTIFY_HEADER_ARTICLE_END');

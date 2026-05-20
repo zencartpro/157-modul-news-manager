@@ -1,14 +1,14 @@
 <?php
 /**
  * Part of the News Box Manager plugin, re-structured for Zen Cart v1.5.8 and later by lat9.
- * Copyright (C) 2015-2024, Vinos de Frutas Tropicales
+ * Copyright (C) 2015-2026, Vinos de Frutas Tropicales
  * Do Not Remove: Coded for Zen-Cart by geeks4u.com
  * Dedicated to Memory of Amelita "Emmy" Abordo Gelarderes
- * @copyright Copyright 2003-2024 Zen Cart Development Team
+ * @copyright Copyright 2003-2026 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: news_box_format.php 2024-02-16 08:35:16Z webchills $
+ * @version $Id: news_box_format.php 2026-05-20 11:35:16Z webchills $
  */
  
 $max_news_items = (((int)$max_news_items) <= 0) ? 10 : $max_news_items;
@@ -57,7 +57,11 @@ if ($news_box_format == 'Individual') {
 }
 
 if ($news_box_use_split) {
-    $news_split = new splitPageResults($news_box_query_raw, $max_news_items);
+    if (class_exists('zca_splitPageResults')) {
+        $news_split = new zca_splitPageResults($news_box_query_raw, $max_news_items);
+    } else {
+        $news_split = new splitPageResults($news_box_query_raw, $max_news_items);
+    }
     $news_info = $db->Execute($news_split->sql_query);
 } else {
     $news_info = $db->Execute($news_box_query_raw . $news_limit);
@@ -77,6 +81,8 @@ foreach ($news_info as $next_news) {
         $news[$news_box_id]['news_content'] = $next_news['news_content'];
     } elseif ($news_box_content_length > 0) {
         $news[$news_box_id]['news_content'] = zen_trunc_string(zen_clean_html($next_news['news_content']), $news_box_content_length);
+    } else {
+        $news[$news_box_id]['news_content'] = '';
     }
 
     if (!empty($next_news['news_end_date'])) {

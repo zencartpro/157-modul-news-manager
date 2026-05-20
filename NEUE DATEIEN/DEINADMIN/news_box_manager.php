@@ -4,11 +4,11 @@
  * Copyright (C) 2015-2024, Vinos de Frutas Tropicales
  * Do Not Remove: Coded for Zen-Cart by geeks4u.com
  * Dedicated to Memory of Amelita "Emmy" Abordo Gelarderes
- * @copyright Copyright 2003-2022 Zen Cart Development Team
+ * @copyright Copyright 2003-2026 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: news_box_manager.php 2024-02-16 08:35:16Z webchills $
+ * @version $Id: news_box_manager.php 2026-05-20 11:35:16Z webchills $
  */
 
 require 'includes/application_top.php';
@@ -45,7 +45,7 @@ if ($news_box_script_name === FILENAME_NEWS_BOX_MANAGER . '.php') {
         exit('Invalid Access.');
     }
     $all_news_types = false;
-    require DIR_WS_LANGUAGES . $_SESSION['language'] . '/news_box_manager.php';
+    $languageLoader->loadExtraLanguageFiles(DIR_WS_LANGUAGES, $_SESSION['language'], FILENAME_NEWS_BOX_MANAGER . '.php');
     $news_box_name_type = 'BOX_NEWS_NAME_TYPE' . $news_box_type;
     $news_type_name = (defined($news_box_name_type)) ? constant($news_box_name_type) : ($news_box_name_type . TEXT_NEWS_TYPE_NAME_UNKNOWN);
 }

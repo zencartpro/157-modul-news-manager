@@ -1,14 +1,14 @@
 <?php
 /**
 * Part of the News Box Manager plugin, re-structured for Zen Cart v1.5.8 and later by lat9.
-* Copyright (C) 2015-2024, Vinos de Frutas Tropicales
+* Copyright (C) 2015-2026, Vinos de Frutas Tropicales
 * Do Not Remove: Coded for Zen-Cart by geeks4u.com
 * Dedicated to Memory of Amelita "Emmy" Abordo Gelarderes
-* @copyright Copyright 2003-2024 Zen Cart Development Team
+* @copyright Copyright 2003-2026 Zen Cart Development Team
 * Zen Cart German Version - www.zen-cart-pro.at
 * @copyright Portions Copyright 2003 osCommerce
 * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
-* @version $Id: tpL_news_box_sidebox.php 2024-02-16 08:35816Z webchills $
+* @version $Id: tpL_news_box_sidebox.php 2026-05-20 11:35816Z webchills $
 */
 
 // -----
@@ -24,7 +24,6 @@ if ($news_sidebox_layout === 'List') {
         $news_content_type = $next_news['news_content_type'];
         $content_class = "nb-t$news_content_type";
         $content .= '<li class="py-1"><a href="' . zen_href_link(FILENAME_ARTICLE, "p=$news_sidebox_id") . '" class="' . $content_class . '">' . $news_sidebox_title. '</a></li>' . PHP_EOL; 
-        $news_box_query->MoveNext();
     }
     $content .= '</ol></div>' . PHP_EOL;
 } else {
@@ -54,7 +53,6 @@ if ($news_sidebox_layout === 'List') {
         $content .= '   <div class="nb-dates">' . $news_date_range . '</div>' . PHP_EOL;
         $content .= '   <div class="nb-content">' . $news_sidebox_content . '</div>' . PHP_EOL;
         $content .= '</div>' . PHP_EOL;
-        $news_box_query->MoveNext();
     }
     $content .= '</div>' . PHP_EOL;
 }
